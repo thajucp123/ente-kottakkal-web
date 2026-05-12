@@ -3,8 +3,8 @@ import BottomNavBar from '@/components/layout/BottomNavBar';
 import './globals.css';
 
 export const metadata = {
-  title: 'എന്റെ കോട്ടയ്ക്കൽ',
-  description: 'ഡിജിറ്റൽ ഗ്രാമസഭയുടെ പുതിയ മുഖം.',
+  title: 'എന്റെ കോട്ടക്കൽ',
+  description: 'ഡിജിറ്റൽ ഗ്രാമത്തിന്റെ പുതിയ മുഖം.',
 };
 
 export const viewport = {

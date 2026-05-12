@@ -24,8 +24,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-primary-container/90 to-transparent"></div>
         </div>
         <div className="absolute bottom-0 left-0 p-5">
-          <h2 className="text-2xl font-bold text-primary-fixed leading-tight">കോട്ടയ്ക്കലിലേക്ക് സ്വാഗതം</h2>
-          <p className="text-sm opacity-90 mt-1">ഡിജിറ്റൽ ഗ്രാമസഭയുടെ പുതിയ മുഖം.</p>
+          <h2 className="text-2xl font-bold text-primary-fixed leading-tight">കോട്ടക്കലിലേക്ക് സ്വാഗതം</h2>
+          <p className="text-sm opacity-90 mt-1">ഡിജിറ്റൽ ഗ്രാമത്തിന്റെ പുതിയ മുഖം.</p>
         </div>
       </section>
 
@@ -34,7 +34,7 @@ export default function Home() {
         <Megaphone className="text-secondary w-6 h-6 mt-1 flex-shrink-0" />
         <div>
           <h3 className="text-xs font-bold font-label text-secondary-container">പ്രധാന അറിയിപ്പ്</h3>
-          <p className="text-sm mt-0.5">നാളെ രാവിലെ 9 മുതൽ 5 വരെ കുടിവെള്ള വിതരണം തടസ്സപ്പെടുന്നതാണ്.</p>
+          <p className="text-sm mt-0.5">നാളെ രാവിലെ 9 മുതൽ 5 വരെ ബീച്ച് റോഡ് മേഖലയിൽ വൈദ്യുതി തടസ്സപ്പെടുന്നതാണ്.</p>
         </div>
       </div>
 

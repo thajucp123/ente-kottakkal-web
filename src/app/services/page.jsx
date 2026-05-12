@@ -13,8 +13,8 @@ export default function ServicesScreen() {
       className="flex flex-col"
     >
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-on-surface">സേവനങ്ങളും ബന്ധങ്ങളും</h2>
-        <p className="text-sm text-on-surface-variant mt-1">കോട്ടയ്ക്കൽ ഗ്രാമപഞ്ചായത്തിലെ പ്രധാന വിവരങ്ങൾ</p>
+        <h2 className="text-2xl font-bold text-on-surface">സേവനങ്ങളും മറ്റു വിവരങ്ങളും</h2>
+        <p className="text-sm text-on-surface-variant mt-1">കോട്ടക്കൽ ഗ്രാമത്തിലെ പ്രധാന വിവരങ്ങൾ</p>
       </div>
 
       <section className="mt-4">
@@ -25,7 +25,7 @@ export default function ServicesScreen() {
               <Home className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-xs font-bold text-on-surface">പഞ്ചായത്ത്</p>
+              <p className="text-xs font-bold text-on-surface">മുനിസിപ്പാലിറ്റി</p>
               <p className="text-[12px] text-on-surface-variant mt-1 font-label font-medium opacity-80 underline underline-offset-4 decoration-primary/20">0483 2742200</p>
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function ServicesScreen() {
               <Stethoscope className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-xs font-bold text-on-surface">ആശുപത്രികൾ</p>
+              <p className="text-xs font-bold text-on-surface">ആംബുലെൻസ് </p>
               <p className="text-[12px] text-on-surface-variant mt-1 font-label font-medium opacity-80">108</p>
             </div>
           </div>

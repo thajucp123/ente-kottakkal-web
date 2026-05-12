@@ -19,7 +19,7 @@ export default function ShopsScreen() {
             കടകൾ
           </h2>
           <p className="text-sm text-on-surface-variant mt-2 max-w-[240px]">
-            കോട്ടയ്ക്കലിലെ വിവിധ വ്യാപാര സ്ഥാപനങ്ങളുടെ വിവരങ്ങൾ ഇവിടെ ലഭ്യമാണ്.
+            കോട്ടക്കലിലെയും പരിസരത്തെയും വിവിധ വ്യാപാര സ്ഥാപനങ്ങളുടെ വിവരങ്ങൾ ഇവിടെ ലഭ്യമാണ്.
           </p>
         </div>
         <div className="absolute -right-10 -bottom-10 w-32 h-32 bg-primary-container/20 rounded-full blur-2xl"></div>

@@ -42,7 +42,7 @@ const SidebarMenu = ({ isOpen, onClose }) => {
                 <X className="w-5 h-5 text-on-primary-container" />
               </button>
               <img src="/logo.png" alt="Ente Kottakkal Logo" className="w-16 h-16 object-cover rounded-full shadow-md mb-3 bg-surface" />
-              <h2 className="text-xl font-bold">എന്റെ കോട്ടയ്ക്കൽ</h2>
+              <h2 className="text-xl font-bold">എന്റെ കോട്ടക്കൽ</h2>
               <p className="text-xs opacity-80 mt-1 font-label">v1.0.0</p>
             </div>
 
@@ -67,7 +67,7 @@ const SidebarMenu = ({ isOpen, onClose }) => {
 
               {/* GitHub External Link */}
               <a
-                href="https://github.com/"
+                href="https://github.com/thajucp123/ente-kottakkal-web"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={onClose}
@@ -102,7 +102,7 @@ const TopAppBar = () => {
           >
             <Menu className="w-6 h-6 text-primary" />
           </button>
-          <h1 className="text-xl font-bold text-primary tracking-tight">എന്റെ കോട്ടയ്ക്കൽ</h1>
+          <h1 className="text-xl font-bold text-primary tracking-tight">എന്റെ കോട്ടക്കൽ</h1>
         </div>
         <img src="/logo.png" alt="Logo" className="w-10 h-10 object-cover rounded-full shadow-sm bg-surface ring-2 ring-primary/10" />
       </header>
