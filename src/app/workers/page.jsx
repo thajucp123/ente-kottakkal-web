@@ -3,6 +3,7 @@
 import { Search, ShieldCheck, Star, Phone, MessageCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 import { WORKERS } from '@/data/workers';
+import Image from 'next/image';
 
 export default function WorkersScreen() {
   return (
@@ -47,7 +48,15 @@ export default function WorkersScreen() {
             )}
             <div className="flex gap-5 items-start">
               {worker.image ? (
-                <img src={worker.image} alt={worker.name} className="w-20 h-20 rounded-full object-cover shadow-md ring-2 ring-white" />
+                <div className="relative w-20 h-20 shadow-md ring-2 ring-white rounded-full overflow-hidden">
+  <Image 
+    src={worker.image} 
+    alt={worker.name} 
+    fill
+    sizes="80px"
+    className="object-cover"
+  />
+</div>
               ) : (
                 <div className="w-20 h-20 bg-tertiary-container text-on-tertiary-container rounded-full flex items-center justify-center text-xl font-bold shadow-md">
                   {worker.initials}
