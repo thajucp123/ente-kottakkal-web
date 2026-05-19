@@ -72,7 +72,7 @@ export default function Home() {
         </Link>
 
         <Link 
-          href="/services"
+          href="/health"
           className="bg-surface-container rounded-xl p-5 flex flex-col items-center justify-center gap-3 border border-outline-variant/30 shadow-sm hover:scale-[1.02] active:scale-95 transition-transform"
         >
           <div className="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-inner text-on-primary-container">

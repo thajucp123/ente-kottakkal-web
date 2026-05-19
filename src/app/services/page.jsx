@@ -3,6 +3,7 @@
 import { Search, Home, ShieldCheck, Megaphone, Stethoscope, Bus, ArrowRight, ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { BUS_ROUTES } from '@/data/routes';
+import Link from 'next/link';
 
 export default function ServicesScreen() {
   return (
@@ -18,47 +19,49 @@ export default function ServicesScreen() {
       </div>
 
       <section className="mt-4">
-        <h3 className="text-lg font-bold text-on-surface mb-4">അടിയന്തര നമ്പറുകൾ</h3>
-        <div className="grid grid-cols-2 gap-3">
-          <div className="bg-surface-container rounded-2xl p-6 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-surface-container-high cursor-pointer transition-colors border border-outline-variant/10">
-            <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center">
-              <Home className="w-6 h-6" />
-            </div>
-            <div>
-              <p className="text-xs font-bold text-on-surface">മുനിസിപ്പാലിറ്റി</p>
-              <p className="text-[12px] text-on-surface-variant mt-1 font-label font-medium opacity-80 underline underline-offset-4 decoration-primary/20">0483 2742200</p>
-            </div>
-          </div>
-          <div className="bg-surface-container rounded-2xl p-6 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-surface-container-high cursor-pointer transition-colors border border-outline-variant/10">
-            <div className="w-12 h-12 bg-error-container/20 text-error rounded-full flex items-center justify-center">
-              <ShieldCheck className="w-6 h-6 fill-current" />
-            </div>
-            <div>
-              <p className="text-xs font-bold text-on-surface">പോലീസ്</p>
-              <p className="text-[12px] text-on-surface-variant mt-1 font-label font-medium opacity-80 decoration-error/20">100</p>
-            </div>
-          </div>
-          <div className="bg-surface-container rounded-2xl p-6 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-surface-container-high cursor-pointer transition-colors border border-outline-variant/10">
-            <div className="w-12 h-12 bg-secondary-container/20 text-secondary rounded-full flex items-center justify-center">
-              <Megaphone className="w-6 h-6 fill-current" />
-            </div>
-            <div>
-              <p className="text-xs font-bold text-on-surface">ഫയർ ഫോഴ്സ്</p>
-              <p className="text-[12px] text-on-surface-variant mt-1 font-label font-medium opacity-80">101</p>
-            </div>
-          </div>
-
-          <div className="bg-surface-container rounded-2xl p-6 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-surface-container-high cursor-pointer transition-colors border border-outline-variant/10">
-            <div className="w-12 h-12 bg-tertiary-container/10 text-tertiary rounded-full flex items-center justify-center">
-              <Stethoscope className="w-6 h-6" />
-            </div>
-            <div>
-              <p className="text-xs font-bold text-on-surface">ആംബുലെൻസ് </p>
-              <p className="text-[12px] text-on-surface-variant mt-1 font-label font-medium opacity-80">108</p>
-            </div>
-          </div>
+  <h3 className="text-lg font-bold text-on-surface mb-4">അടിയന്തര നമ്പറുകൾ</h3>
+  <div className="grid grid-cols-2 gap-3">
+    <a href="tel:04832742200" className="bg-surface-container rounded-2xl p-6 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-surface-container-high cursor-pointer transition-colors border border-outline-variant/10">
+      <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+        <Home className="w-6 h-6" />
+      </div>
+      <div>
+        <p className="text-xs font-bold text-on-surface">മുനിസിപ്പാലിറ്റി</p>
+        <p className="text-[12px] text-on-surface-variant mt-1 font-label font-medium opacity-80 underline underline-offset-4 decoration-primary/20">
+          0483 2742200
+        </p>
+      </div>
+    </a>
+    <a href="tel:100" className="bg-surface-container rounded-2xl p-6 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-surface-container-high cursor-pointer transition-colors border border-outline-variant/10">
+        <div className="w-12 h-12 bg-error-container/20 text-error rounded-full flex items-center justify-center">
+          <ShieldCheck className="w-6 h-6 fill-current" />
         </div>
-      </section>
+        <div>
+          <p className="text-xs font-bold text-on-surface">പോലീസ്</p>
+          <p className="text-[12px] text-on-surface-variant mt-1 font-label font-medium opacity-80 decoration-error/20">100</p>
+        </div>
+      </a>
+    <a href="tel:101" className="bg-surface-container rounded-2xl p-6 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-surface-container-high cursor-pointer transition-colors border border-outline-variant/10">
+        <div className="w-12 h-12 bg-secondary-container/20 text-secondary rounded-full flex items-center justify-center">
+          <Megaphone className="w-6 h-6 fill-current" />
+        </div>
+        <div>
+          <p className="text-xs font-bold text-on-surface">ഫയർ ഫോഴ്സ്</p>
+          <p className="text-[12px] text-on-surface-variant mt-1 font-label font-medium opacity-80">101</p>
+        </div>
+      </a>
+    <a href="tel:108" className="bg-surface-container rounded-2xl p-6 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-surface-container-high cursor-pointer transition-colors border border-outline-variant/10">
+      <div className="w-12 h-12 bg-tertiary-container/10 text-tertiary rounded-full flex items-center justify-center">
+        <Stethoscope className="w-6 h-6" />
+      </div>
+      <div>
+        <p className="text-xs font-bold text-on-surface">ആംബുലെൻസ് </p>
+        <p className="text-[12px] text-on-surface-variant mt-1 font-label font-medium opacity-80">108</p>
+      </div>
+    </a>
+  </div>
+</section>
+<Link href="/services/other-numbers" className="w-full bg-primary-container text-on-primary-container rounded-xl p-4 text-center font-semibold hover:scale-[1.02] active:scale-95 transition-transform block text-lg mt-4">മറ്റ് പ്രധാന നമ്പറുകൾ &gt;</Link>
 
       {/* Bus Timing Section */}
       <section className="mt-10 bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/30 shadow-md">
