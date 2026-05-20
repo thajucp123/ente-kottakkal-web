@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { MessageSquare, Send, Clock, User } from 'lucide-react';
+import { MessageSquare, Send, Clock, User, ClipboardList } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import Link from 'next/link';
 
 // Mock initial data
 const INITIAL_FEEDBACKS = [
@@ -62,6 +63,25 @@ export default function FeedbackScreen() {
           അഭിപ്രായങ്ങൾ
         </h2>
         <p className="text-sm text-on-surface-variant mt-1">നിങ്ങളുടെ വിലയേറിയ അഭിപ്രായങ്ങളും നിർദ്ദേശങ്ങളും ഞങ്ങളെ അറിയിക്കുക.</p>
+      </div>
+
+      {/* Banner to listing requests */}
+      <div className="bg-secondary-container/10 border border-secondary/15 rounded-2xl p-5 flex flex-col gap-3.5 shadow-sm">
+        <div className="flex gap-3 items-start">
+          <ClipboardList className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
+          <div className="flex-1">
+            <h3 className="font-bold text-sm text-on-surface">പുതിയ ലിസ്റ്റിംഗ് ചേർക്കണോ?</h3>
+            <p className="text-xs text-on-surface-variant mt-1 leading-relaxed">
+              പ്ലാറ്റ്‌ഫോമിലേക്ക് പുതിയ കടകൾ, സർവീസുകൾ, അല്ലെങ്കിൽ നിങ്ങളുടെ സ്വന്തം വിവരങ്ങൾ ചേർക്കാൻ അഡ്മിന് അപേക്ഷ സമർപ്പിക്കാം.
+            </p>
+          </div>
+        </div>
+        <Link 
+          href="/feedback/request-listing" 
+          className="w-full bg-secondary text-on-secondary text-center py-2.5 rounded-xl font-bold text-xs shadow-sm hover:bg-secondary/90 active:scale-[0.98] transition-all"
+        >
+          വിവരങ്ങൾ ചേർക്കാൻ അപേക്ഷിക്കുക
+        </Link>
       </div>
 
       <form onSubmit={handleSubmit} className="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/30 shadow-sm flex flex-col gap-5">

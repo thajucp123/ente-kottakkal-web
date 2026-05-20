@@ -1,7 +1,8 @@
 'use client';
 
-import { Search, Heart, Phone } from 'lucide-react';
+import { Search, Heart, Phone, ArrowLeft } from 'lucide-react';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 import { DONORS } from '@/data/donors';
 
 export default function BloodBankScreen() {
@@ -10,11 +11,19 @@ export default function BloodBankScreen() {
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 20 }}
-      className="flex flex-col"
+      className="flex flex-col gap-6"
     >
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-primary">ബ്ലഡ് ബാങ്ക്</h2>
-        <p className="text-sm text-on-surface-variant mt-1">അടിയന്തര സാഹചര്യങ്ങളിൽ രക്തം ലഭ്യമാക്കാൻ സഹായിക്കുക.</p>
+      <div className="flex items-center gap-3">
+        <Link 
+          href="/"
+          className="p-2.5 bg-surface-container-low hover:bg-surface-container rounded-full border border-outline-variant/10 transition-colors shadow-sm"
+        >
+          <ArrowLeft className="w-5 h-5 text-on-surface" />
+        </Link>
+        <div>
+          <h2 className="text-2xl font-bold text-primary leading-tight">ബ്ലഡ് ബാങ്ക്</h2>
+          <p className="text-xs text-on-surface-variant mt-0.5">അടിയന്തര സാഹചര്യങ്ങളിൽ രക്തം ലഭ്യമാക്കാൻ സഹായിക്കുക.</p>
+        </div>
       </div>
 
       <div className="bg-surface-container-low rounded-2xl p-5 border border-outline-variant/30 shadow-sm mb-8">

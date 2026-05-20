@@ -51,10 +51,27 @@ ente-kottakkal-web-front-end/
     │   ├── about/              # "About the App" page
     │   ├── blood/              # Blood donor search portal
     │   ├── developer/          # Developer credentials screen
-    │   ├── feedback/           # User feedback forms
+    │   ├── education/          # Education Hub
+    │   │   ├── institutions/   # Schools, colleges, & universities subpage
+    │   │   ├── tuitions/       # Tuition & entrance coaching hubs subpage
+    │   │   ├── scholarships/   # Student scholarship directories subpage
+    │   │   └── notices/        # Exam timetables & deadlines subpage
+    │   ├── events/             # Local events & festivals listing
+    │   ├── feedback/           # User feedback forms & private listing application
+    │   │   └── request-listing/# Private submission form for listings
     │   ├── health/             # Medical directory (clinics, pharmacy, ambulance)
+    │   ├── jobs/               # Local Job Board (listings & post vacancy form)
+    │   ├── lost-found/         # Lost & Found listings (registry & claim form)
+    │   ├── news/               # Local news updates portal
+    │   ├── properties/         # Real estate listings & post form
+    │   ├── religious/          # Religious utilities & multi-faith directory
     │   ├── services/           # Panchayat contacts & Bus routes list
     │   ├── shops/              # Local business directory (textiles, groceries)
+    │   ├── tourism/            # Tourism Hub
+    │   │   ├── historical/     # Historical & Heritage spots subpage
+    │   │   ├── tourist/        # Scenic & sightseeing places subpage
+    │   │   ├── culture/        # Traditional and cultural venues subpage
+    │   │   └── food/           # Regional dining & food joints subpage
     │   ├── workers/            # Laborers (carpenters, plumbers, electricians)
     │   ├── globals.css         # Styling system & Tailwind v4 theme definitions
     │   ├── layout.jsx          # Center-aligned mobile-first layout wrapper
@@ -68,9 +85,16 @@ ente-kottakkal-web-front-end/
     │       └── TopAppBar.jsx     # Header bar and sidebar drawer menu
     └── data/                   # JSON/JS local mock datasets
         ├── donors.js           # Blood group donors lists
+        ├── education_mock.js   # Schools, coaching, scholarships mock data
+        ├── events_mock.js      # Upcoming and past events mock data
+        ├── jobs_mock.js        # Vacancies board mock data
+        ├── lost_found_mock.js  # Lost & Found mock database
         ├── news.js             # Announcements and local news
+        ├── properties_mock.js  # Real estate listings mock data
+        ├── religious_mock.js   # Multi-faith directories & timings data
         ├── routes.js           # Bus routes & timing listings
         ├── shops.js            # Business directories (names, contact numbers)
+        ├── tourism_mock.js     # Tourism places and highlight tags data
         └── workers.js          # Skilled labor directories (skills, ratings)
 ```
 
@@ -125,7 +149,61 @@ Four premium system templates have been implemented to ensure a cohesive user ex
 
 ---
 
-## 6. Infrastructure & Deployment Decisions
+## 6. Newly Implemented Community & Utility Modules
+
+The following features have been added to expand local utility and community interactions, using local state persistence (`localStorage`) combined with mock datasets:
+
+### A. Lost & Found Module (`src/app/lost-found/`)
+*   **Main Dashboard:** Displays reported items with text search (filtering titles, locations, and descriptions) and category filters (Documents, Electronics, Keys, Pets, Jewelry, Others).
+*   **Status Toggle:** Users can switch between "Lost" (red label/beacon) and "Found" (green label/beacon) categories.
+*   **Submission Form (`/lost-found/create`):** Allows users to register items with phone contact detail inputs.
+*   **State Persistence:** Entries are saved locally to `localStorage` (`ente_kottakkal_lost_found`).
+
+### B. Hyperlocal Job Board (`src/app/jobs/`)
+*   **Opportunity Listings:** Shows job cards with title, company name, wage range, location, and quick phone call triggers.
+*   **Posting Form (`/jobs/create`):** Employers can list part-time, full-time, temporary, or Gulf vacancies. Includes expiry date settings.
+*   **State Persistence:** Entries are saved locally to `localStorage` (`ente_kottakkal_jobs`).
+
+### C. Real Estate, Properties & Rentals (`src/app/properties/`)
+*   **Dashboard Listing:** Offers listing view of rentals and sales with transaction filtering (Tabs for Rent/Sale) and category chips (Houses, Rooms/PGs, Commercial, Plot/Land).
+*   **Posting Form (`/properties/create`):** Allows landlords and property owners to submit detailed listings with measurements (sqft/cents) and price.
+*   **State Persistence:** Entries are saved locally to `localStorage` (`ente_kottakkal_properties`).
+
+### D. Events, Festivals & Programs (`src/app/events/`)
+*   **Read-Only Dashboard:** Interactive bulletin board of cultural, religious, arts, sports, and service camps in Kottakkal.
+*   **Filtering:** Tabs toggle between upcoming events and past programs. Subtype chips allow filtering by event type.
+
+### E. Education Directory Hub (`src/app/education/`)
+*   **Grid Menu Access:** Located under the **Services (സേവനങ്ങൾ)** section of the Home screen as a full-width bento card. Opens a hub containing 4 styled cards linking to dedicated subroutes:
+    *   **Schools & Colleges (`/education/institutions`):** Complete index of local schools, colleges, and major universities (Calicut University, Malayalam University). Features search bar and filter chips for Schools, Colleges, and Universities.
+    *   **Tuitions & Coaching (`/education/tuitions`):** Comprehensive listings of local tutoring houses and competitive entrance exam preparation centers. Includes contact calls and subject filtering.
+    *   **Scholarships (`/education/scholarships`):** Educational student welfare schemes showing eligibility requirements, value details, and application deadlines.
+    *   **Announcements (`/education/notices`):** Notice board displaying exam timetables, registration dates, and reschedule alerts.
+
+### F. Religious Utilities & Faiths Directory (`src/app/religious/`)
+*   **Multi-Faith Structure:** Balanced support for Hindu, Muslim, and Christian faiths.
+*   **Timings Console:** Daily timings for Muslim prayers (Fajr, Dhuhr, Asr, Maghrib, Isha), Temple darshans, and Christian Holy Masses.
+*   **Worship Directory:** Contact directories of local temples (ക്ഷേത്രങ്ങൾ), mosques (മസ്ജിദുകൾ), and churches/parishes (ദേവാലയങ്ങൾ).
+*   **Notices Feed:** Religious notifications and feast/festival announcements.
+
+### G. Tourism, Culture & Heritage Hub (`src/app/tourism/`)
+*   **Grid Menu Access:** Located under the **Community (കമ്മ്യൂണിറ്റി)** section of the Home screen. Opens a hub containing 4 styled cards linking to dedicated subroutes:
+    *   **History (`/tourism/historical`):** Spotlight on heritage palaces (e.g. Kottakkal Kovilakam) and historical landmarks.
+    *   **Sightseeing (`/tourism/tourist`):** Features local botanical gardens, scenic hills, and photo-friendly areas.
+    *   **Culture (`/tourism/culture`):** Covers temple festival venues, auditoriums, and venues for traditional performance arts.
+    *   **Food Spots (`/tourism/food`):** Highlights local Malabar dining spots, snack stalls, and lake-side eateries.
+
+### H. Private Listing Submission (`src/app/feedback/request-listing/`)
+*   **Admin Submission Hook:** Accessible via a banner on the Feedback screen. Residents submit details of their shops, clinics, or labor profiles.
+*   **Security:** Submissions do not appear in public lists immediately; they are saved in a pending status queue awaiting administrative review (`ente_kottakkal_listing_requests`).
+
+### I. Local News Hub (`src/app/news/`)
+*   **Home Screen Feed:** Displays real-time updates and announcements. A button labeled **എല്ലാ വാർത്തകളും (All News)** triggers navigation to the dedicated news hub.
+*   **Details & Engagement:** Users can search through historical news stories, browse full article descriptions, and interact using like counters.
+
+---
+
+## 7. Infrastructure & Deployment Decisions
 
 For more detailed decisions, consult the records under `docs/adr/`:
 1.  **Managed Backend (ADR 002):** Firebase Firestore, Auth, and Storage host live database models. Contributors do not need to run database servers locally.
@@ -134,7 +212,7 @@ For more detailed decisions, consult the records under `docs/adr/`:
 
 ---
 
-## 7. Developer Contributor Guide
+## 8. Developer Contributor Guide
 
 ### Prerequisites
 *   **Node.js:** `v20.x` or later (Recommended)

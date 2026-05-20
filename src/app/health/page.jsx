@@ -1,7 +1,8 @@
 'use client';
 
-import { Search, Home, ShieldCheck, Megaphone, Stethoscope, Bus, ArrowRight, ChevronRight } from 'lucide-react';
+import { Search, Home, ShieldCheck, Megaphone, Stethoscope, Bus, ArrowRight, ChevronRight, ArrowLeft } from 'lucide-react';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 import { BUS_ROUTES } from '@/data/routes';
 
 export default function ServicesScreen() {
@@ -10,11 +11,19 @@ export default function ServicesScreen() {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -30 }}
-      className="flex flex-col"
+      className="flex flex-col gap-6"
     >
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-on-surface">ആരോഗ്യം</h2>
-        <p className="text-sm text-on-surface-variant mt-1">കോട്ടക്കൽ ഗ്രാമത്തിലെ ആരോഗ്യ വിവരങ്ങൾ</p>
+      <div className="flex items-center gap-3">
+        <Link 
+          href="/"
+          className="p-2.5 bg-surface-container-low hover:bg-surface-container rounded-full border border-outline-variant/10 transition-colors shadow-sm"
+        >
+          <ArrowLeft className="w-5 h-5 text-on-surface" />
+        </Link>
+        <div>
+          <h2 className="text-2xl font-bold text-on-surface leading-tight">ആരോഗ്യം</h2>
+          <p className="text-xs text-on-surface-variant mt-0.5 font-medium">കോട്ടക്കൽ ഗ്രാമത്തിലെ ആരോഗ്യ വിവരങ്ങൾ</p>
+        </div>
       </div>
 
       <section className="mt-4">
