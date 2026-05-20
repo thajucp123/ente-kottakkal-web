@@ -9,7 +9,7 @@ const BottomNavBar = () => {
 
   const tabs = [
     { id: '/', label: 'ഹോം', icon: Home },
-    { id: '/shops', label: 'കടകൾ', icon: Store },
+    { id: '/shops', label: 'സ്ഥാപനങ്ങൾ', icon: Store },
     { id: '/workers', label: 'തൊഴിലാളികൾ', icon: HardHat },
     { id: '/services', label: 'സേവനങ്ങൾ', icon: Briefcase },
   ];

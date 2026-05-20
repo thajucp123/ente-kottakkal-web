@@ -83,7 +83,7 @@ export default function Home() {
           <div className="w-12 h-12 rounded-full bg-surface-bright flex items-center justify-center shadow-inner">
             <Store className="w-6 h-6 text-secondary" />
           </div>
-          <span className="text-sm font-semibold font-label">കടകൾ</span>
+          <span className="text-sm font-semibold font-label">സ്ഥാപനങ്ങൾ</span>
         </Link>
 
         <Link 
