@@ -1,6 +1,6 @@
 'use client';
 
-import { Search, Home, ShieldCheck, Megaphone, Stethoscope, Bus, ArrowRight, ChevronRight } from 'lucide-react';
+import { Search, Home, ShieldCheck, Megaphone, Stethoscope, Bus, ArrowRight, ChevronRight, ArrowLeft, PhoneCall, AlertTriangle, HeartHandshake, Phone } from 'lucide-react';
 import { motion } from 'motion/react';
 import { BUS_ROUTES } from '@/data/routes';
 import Link from 'next/link';
@@ -13,50 +13,74 @@ export default function ServicesScreen() {
       exit={{ opacity: 0, y: -30 }}
       className="flex flex-col"
     >
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-on-surface">സേവനങ്ങളും മറ്റു വിവരങ്ങളും</h2>
-        <p className="text-sm text-on-surface-variant mt-1">കോട്ടക്കൽ ഗ്രാമത്തിലെ പ്രധാന വിവരങ്ങൾ</p>
+      <div className="mb-6 flex items-center gap-3">
+        <Link
+          href="/"
+          className="p-2.5 bg-surface-container-low hover:bg-surface-container rounded-full border border-outline-variant/10 transition-colors shadow-sm"
+        >
+          <ArrowLeft className="w-5 h-5 text-on-surface" />
+        </Link>
+        <div>
+          <h2 className="text-2xl font-bold text-on-surface leading-tight">സേവനങ്ങൾ</h2>
+          <p className="text-xs text-on-surface-variant mt-0.5 font-medium">കോട്ടക്കൽ ഗ്രാമത്തിലെ പ്രധാന വിവരങ്ങൾ</p>
+        </div>
       </div>
 
       <section className="mt-4">
   <h3 className="text-lg font-bold text-on-surface mb-4">അടിയന്തര നമ്പറുകൾ</h3>
   <div className="grid grid-cols-2 gap-3">
-    <a href="tel:04832742200" className="bg-surface-container rounded-2xl p-6 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-surface-container-high cursor-pointer transition-colors border border-outline-variant/10">
+    <a href="tel:04832742200" className="bg-surface-container rounded-2xl p-5 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-surface-container-high cursor-pointer transition-colors border border-outline-variant/10">
       <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center">
         <Home className="w-6 h-6" />
       </div>
       <div>
         <p className="text-xs font-bold text-on-surface">മുനിസിപ്പാലിറ്റി</p>
-        <p className="text-[12px] text-on-surface-variant mt-1 font-label font-medium opacity-80 underline underline-offset-4 decoration-primary/20">
-          0483 2742200
-        </p>
+        <p className="text-[11px] text-on-surface-variant mt-1 font-label font-medium opacity-80 underline underline-offset-4 decoration-primary/20">0483 274 2200</p>
       </div>
     </a>
-    <a href="tel:100" className="bg-surface-container rounded-2xl p-6 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-surface-container-high cursor-pointer transition-colors border border-outline-variant/10">
-        <div className="w-12 h-12 bg-error-container/20 text-error rounded-full flex items-center justify-center">
-          <ShieldCheck className="w-6 h-6 fill-current" />
-        </div>
-        <div>
-          <p className="text-xs font-bold text-on-surface">പോലീസ്</p>
-          <p className="text-[12px] text-on-surface-variant mt-1 font-label font-medium opacity-80 decoration-error/20">100</p>
-        </div>
-      </a>
-    <a href="tel:101" className="bg-surface-container rounded-2xl p-6 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-surface-container-high cursor-pointer transition-colors border border-outline-variant/10">
-        <div className="w-12 h-12 bg-secondary-container/20 text-secondary rounded-full flex items-center justify-center">
-          <Megaphone className="w-6 h-6 fill-current" />
-        </div>
-        <div>
-          <p className="text-xs font-bold text-on-surface">ഫയർ ഫോഴ്സ്</p>
-          <p className="text-[12px] text-on-surface-variant mt-1 font-label font-medium opacity-80">101</p>
-        </div>
-      </a>
-    <a href="tel:108" className="bg-surface-container rounded-2xl p-6 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-surface-container-high cursor-pointer transition-colors border border-outline-variant/10">
+    <a href="tel:100" className="bg-error-container/15 rounded-2xl p-5 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-error-container/25 cursor-pointer transition-colors border border-error/10">
+      <div className="w-12 h-12 bg-error-container text-error rounded-full flex items-center justify-center">
+        <ShieldCheck className="w-6 h-6 fill-current" />
+      </div>
+      <div>
+        <p className="text-xs font-bold text-on-surface">പോലീസ്</p>
+        <p className="text-[11px] text-on-surface-variant mt-1 font-label font-medium opacity-80">100</p>
+      </div>
+    </a>
+    <a href="tel:101" className="bg-orange-50 rounded-2xl p-5 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-orange-100/60 cursor-pointer transition-colors border border-orange-200/30">
+      <div className="w-12 h-12 bg-orange-100 text-orange-700 rounded-full flex items-center justify-center">
+        <AlertTriangle className="w-6 h-6" />
+      </div>
+      <div>
+        <p className="text-xs font-bold text-on-surface">ഫയർ ഫോഴ്സ്</p>
+        <p className="text-[11px] text-on-surface-variant mt-1 font-label font-medium opacity-80">101</p>
+      </div>
+    </a>
+    <a href="tel:108" className="bg-surface-container rounded-2xl p-5 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-surface-container-high cursor-pointer transition-colors border border-outline-variant/10">
       <div className="w-12 h-12 bg-tertiary-container/10 text-tertiary rounded-full flex items-center justify-center">
         <Stethoscope className="w-6 h-6" />
       </div>
       <div>
-        <p className="text-xs font-bold text-on-surface">ആംബുലെൻസ് </p>
-        <p className="text-[12px] text-on-surface-variant mt-1 font-label font-medium opacity-80">108</p>
+        <p className="text-xs font-bold text-on-surface">ആംബുലൻസ്</p>
+        <p className="text-[11px] text-on-surface-variant mt-1 font-label font-medium opacity-80">108</p>
+      </div>
+    </a>
+    <a href="tel:1091" className="bg-rose-50 rounded-2xl p-5 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-rose-100/50 cursor-pointer transition-colors border border-rose-100/60">
+      <div className="w-12 h-12 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center">
+        <HeartHandshake className="w-6 h-6" />
+      </div>
+      <div>
+        <p className="text-xs font-bold text-on-surface">വനിതാ ഹെൽപ്പ്‌ലൈൻ</p>
+        <p className="text-[11px] text-on-surface-variant mt-1 font-label font-medium opacity-80">1091</p>
+      </div>
+    </a>
+    <a href="tel:1077" className="bg-blue-50 rounded-2xl p-5 flex flex-col items-center text-center gap-3 shadow-sm hover:bg-blue-100/50 cursor-pointer transition-colors border border-blue-100/60">
+      <div className="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center">
+        <PhoneCall className="w-6 h-6" />
+      </div>
+      <div>
+        <p className="text-xs font-bold text-on-surface">ദുരന്ത നിവാരണം</p>
+        <p className="text-[11px] text-on-surface-variant mt-1 font-label font-medium opacity-80">1077</p>
       </div>
     </a>
   </div>
